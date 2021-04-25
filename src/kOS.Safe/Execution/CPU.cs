@@ -400,7 +400,12 @@ namespace kOS.Safe.Execution
         // only two contexts exist now, one for the interpreter and one for the programs
         public IProgramContext GetInterpreterContext()
         {
-            return contexts[0];
+            if (contexts.Count > 0) {
+                return contexts [0];
+            } else {
+                return null;
+            }
+
         }
 
         public IProgramContext SwitchToProgramContext()
